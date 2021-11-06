@@ -175,6 +175,8 @@ class PoetryDataGenerator:
         return self.steps
 
     def __iter__(self):
+        iiii=211
+
         total = len(self.data)
         # 是否随机混洗
         if self.random:
@@ -191,6 +193,7 @@ class PoetryDataGenerator:
             # yield x,y
             yield batch_data[:, :-1], tf.one_hot(batch_data[:, 1:], tokenizer.vocab_size)
             del batch_data
+
 
     def for_fit(self):
         """
